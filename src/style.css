@@ -1,65 +1,97 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  justify-content: center;
-  padding: 2rem;
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2E2E3B;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.card-wrapper {
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
   display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 200;
+  line-height: 0.1;
+}
+
+h2 {
+  font-size: 3.5em;
+  font-weight: 500;
+  line-height: 0.1;
+  place-items: center;
+  position: relative;
+  top: -50px;
+
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid transparent;
+  padding: 0.5em 1.5em;
+  font-size: 2em;
+  font-weight: 700;
+  font-family: roboto, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
   cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-.flip-box {
-  width: 200px;
-  height: 250px;
-  perspective: 1000px;
-  position: relative;
+.card {
+  padding: 2em;
 }
 
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.title {
+  font-size: 3.5em;
+  font-weight: 500;
+  line-height: 0.1;
 }
 
-.flip-box.flipped .flip-box-inner {
-  transform: rotateY(180deg);
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.flip-box-front,
-.flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.full-card {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.flip-box-front {
-  background-color: lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flip-box-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flip-enter-active, .flip-leave-active {
-  transition: transform 0.8s ease-in-out;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
